@@ -41,7 +41,7 @@ void merge_sort( int* arr, int length , int* temp)
     }
     printf("\n");
 
-    merge_sort( arr+middle, length-middle, temp);
+    merge_sort( arr+middle, length-middle, temp+middle);//后半段，用temp后半段
 
     printf("\t\t\t\t\t\t****** merge_half_2:");
     for( int x=0; x<length-middle; x++ ){
@@ -83,6 +83,8 @@ void merge( int* a1, int a1_l, int* a2, int a2_l, int* temp )
         printf("%d ", temp[x]);
     }
 */
+    //a1数组原来的长度是包含 a2数组的；
+    //不改变数组a1的地址，为了维护原数组(a1所指向)指向不变
     for( i=0; i<len; i++ ){
         a1[i] = temp[i];
 //        temp[i] = 0;
